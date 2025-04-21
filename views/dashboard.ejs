@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IoT Dashboard</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 2rem; }
+    .alert { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Machine Health Monitoring</h1>
+  <p>🌡 Temperature: <%= data.temperature %> °C</p>
+  <p>🔧 Vibration: <%= data.vibration %> g</p>
+  <p>⚡ Power Usage: <%= data.power %> W</p>
+
+  <% if (data.temperature > 60 || data.vibration > 4 || data.power > 250) { %>
+    <p class="alert">⚠️ Abnormal Machine Reading Detected!</p>
+  <% } %>
+</body>
+</html>
